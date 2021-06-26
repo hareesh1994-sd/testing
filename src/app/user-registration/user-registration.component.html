@@ -1,0 +1,37 @@
+<div class="bodyContainer">
+  <div class="bodyWrap p-5">
+    <div class="formContainer">
+      <h3 class="pb-3">Student Registration Form</h3>
+      <form class="p-3 border border-info" [formGroup]="studientsForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="firstName">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="lastName">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Student Phone Number</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="phoneNumber">
+        </div>
+        <div>
+          <label>Select Language</label>
+          <select class="browser-default custom-select mb-4" formControlName="selectedLanguage">
+            <option value="" disabled>Choose option</option>
+            <option value="Engilsh" selected>Engilsh</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Kannada">Kannada</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="emailAdress">
+        </div>
+        <button [disabled]="!studientsForm.valid" type="submit" class="btn btn-primary" (click)="register()" [routerLink]="['/details']">Register</button>
+      </form>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
